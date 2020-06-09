@@ -54,8 +54,12 @@ $(function(){
              $container.html("")
              $container.load(`${url}`);
 
+            
+
 })
      
-
+$("#container-admin").on("click",".test",()=>{
+      alert("ok");
+})
   
 });
