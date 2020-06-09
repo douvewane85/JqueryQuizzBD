@@ -57,7 +57,10 @@ $(function(){
             
 
 })
-     
+   
+//Maniere d'activer un evenement apres le load
+//"#container-admin" represente l'id du div ou on a fait le chargement
+//.test la classe ou on veut activer evenemnt
 $("#container-admin").on("click",".test",()=>{
       alert("ok");
 })
