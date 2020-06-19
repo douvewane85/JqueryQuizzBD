@@ -1,4 +1,4 @@
-
+<div id="container-admin" class="w-50 bgWhite container rounded  text-secondary py-2">
             <div class=" inscription-form-header">
                 <h1 class="h4 m-0">S'INSCRIRE</h1>
                 <p class="mb-1 ">Pour proposer un quizz</p>
@@ -14,7 +14,7 @@
                       <?php
                         }
                      ?>
-                    <form class="pr-5" method="post" action="<?=URL_ROOT?>/security/creerCompte">
+                    <form class="pr-5" method="post" action="<?=BASE_ROOT?>/security/creerCompte">
                         <div class="form-group mb-1">
                             <label class="m-0 p-1" for="prenom">Prenom</label>
                             <input name="prenom" type="text" class="form-control" id="prenom">
@@ -92,4 +92,5 @@
                         <img class="img-fluid" src="./img/" alt="">
                     </div>
                 </div>
-        
+                </div>
+

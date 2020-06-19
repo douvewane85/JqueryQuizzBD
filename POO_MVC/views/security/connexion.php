@@ -1,5 +1,5 @@
 
-<div id="connexion-form" class="w-25">
+<div  class="w-25">
 
                     
             <div class="connexion-form-header">
@@ -7,7 +7,7 @@
                 
             </div>
 
-            <div class="connexion-form-body bgWhite p-3">
+            <div id="connexion-form" class="connexion-form-body bgWhite p-3">
                   <?php
                         if(isset($err_login)){ 
                      ?>
@@ -46,5 +46,24 @@
             </div>
 
 </div>
+<script>
+$(function()){
+    $("#form-connexion").submit((event)=>{ 
+        alert("ok");
+            event.preventDefault();
+            $form=$("#form-connexion")
+            url = $form.attr("action" );
+            $.post(url,  $form.serialize() ,
+               function(data, status){
+                   alert(data)
+                     if(data.trim()!="error"){
+                       // window.location.replace(`${url}`)
+                       alert("ok")
+                     }
+              });     
+    })    
+}
 
+
+</script>
 

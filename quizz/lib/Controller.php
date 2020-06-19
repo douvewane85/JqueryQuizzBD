@@ -1,6 +1,6 @@
 <?php
+abstract class Controller{
 
-class Controller{
     protected $validator;
     protected $view;
     protected $folder_view;
@@ -15,15 +15,16 @@ class Controller{
     public function render(){
         ob_start();
         //Inclusion des données du Controller vers la vue
-        extract($this->data_view);
+         extract($this->data_view);
         require_once('views/'.$this->folder_view.'/'.$this->view.'.php');
-        $content_for_layout=ob_get_clean();
-       
+        if($this->layout!=null){
+            $content_for_layout=ob_get_clean();
             require_once('views/layout/'.$this->layout.'.php');
-        
+        }
      
+       
        }
 
 
-      
+    public abstract function view();
 }

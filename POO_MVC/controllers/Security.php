@@ -153,6 +153,9 @@ class Security extends Controller{
        
       
     }
+
+   
+
     public function seDeconnecter(){
         //Destruction des données utlisateur
            session_destroy();

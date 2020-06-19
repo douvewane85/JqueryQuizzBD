@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=URL_ASSETS?>/css/classe.css">
+    <link rel="stylesheet" href="<?=BASE_ROOT?>assets/css/classe.css">
 
 
 </head>
@@ -27,7 +27,7 @@
             <div class="section-header bgPrimary position-relative ">
                 <h3 class=" w-100 py-2 d-inline-block text-center">CREER ET PARAMETRER VOS QUIZZ</h3>
                 <a name="" id=""  class="deconnexion position-absolute btn btn-primary"
-                    style="right: 10px; top: 10px;" href="<?=URL_ROOT?>/security/seDeconnecter" role="button">Deconnexion</a>
+                    style="right: 10px; top: 10px;" href="<?=BASE_ROOT?>security/seDeconnecter" role="button">Deconnexion</a>
             </div>
 
 
@@ -46,18 +46,18 @@
                          
 
                             <nav class="nav flex-column py-3 ">
-                                <a class="nav-link active" lien="<?=URL_ROOT?>/Admin/loadPage/liste_joueur" href="#">Lister Joueur</a>
-                                <a class="nav-link"  lien="<?=URL_ROOT?>/Admin/loadPage/add_admin" href="#">Creer Admin</a>
-                                <a class="nav-link" lien="<?=URL_ROOT?>/Admin/loadPage/add_question" href="#">Creer Question </a>
-                                <a class="nav-link"  lien="<?=URL_ROOT?>/Admin/loadPage/lister_question" href=" #">Lister Question</a>
+                                <a class="nav-link active" lien="<?=BASE_ROOT?>Admin/loadPage/liste_joueur" href="#">Lister Joueur</a>
+                                <a class="nav-link"  lien="<?=BASE_ROOT?>Admin/loadPage/add_admin" href="#">Creer Admin</a>
+                                <a class="nav-link" lien="<?=BASE_ROOT?>/Admin/loadPage/add_question" href="#">Creer Question </a>
+                                <a class="nav-link"  lien="<?=BASE_ROOT?>/Admin/loadPage/lister_question" href=" #">Lister Question</a>
                             </nav>
 
                         </div>
                     </div>
 
-                    <div id="container-admin" class="w-50 bgWhite container rounded  text-secondary py-2">
+                   
                           <?php echo $content_for_layout;?>
-                    </div>
+                    
                     
 
 
@@ -67,26 +67,10 @@
         </section>
 </div>
        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-       <script src="<?=URL_ASSETS?>/js/script.js"></script> 
+       <script src="<?=BASE_ROOT?>assets/js/script.js"></script> 
 
-<script>
 
-$(function(){
-    const $container=$("#container-admin"); 
-      $(".nav-link").on("click",function(){
-       //Récuperation du lien sur lequel l'admin à cliquer
-        $lien_encour=$(this);
-      //Récuperation de l'url sauvegarder dans l'attribut lien
-        const url= $lien_encour.attr("lien");
-      
-       //Récuperation de la partie droite de la page layout_admin.php      
-        //Vider le Condenu avant de Faire le Load
-         $container.html("")
-         $container.load(`${url}`);
-})
-})
 
-</script>
 
 </body>
 

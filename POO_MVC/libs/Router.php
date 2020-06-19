@@ -42,7 +42,7 @@ class Router{
                 $action=$url[1];
                 unset($url[0]);
                 unset($url[1]);
-                $cont->{$action}();
+                $cont->{$action}($url);
              
              
                }else{

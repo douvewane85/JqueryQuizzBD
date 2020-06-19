@@ -14,7 +14,7 @@
                       <?php
                         }
                      ?>
-                    <form class="pr-5" method="post" action="<?=URL_ROOT?>/security/creerCompte">
+                    <form class="pr-5" id="form-connexion" method="post" action="<?=URL_ROOT?>/security/creerCompte">
                         <div class="form-group mb-1">
                             <label class="m-0 p-1" for="prenom">Prenom</label>
                             <input name="prenom" type="text" class="form-control" id="prenom">
@@ -92,4 +92,32 @@
                         <img class="img-fluid" src="./img/" alt="">
                     </div>
                 </div>
-        
+
+
+<script>
+$(function(){
+
+    $("#container-admin").on("submit","#form-connexion",(event)=>{ 
+            event.preventDefault();
+            $form=$("#form-connexion")
+            url = $form.attr("action" );
+            alert(url);
+            //Faire ici la Validation du Formulaire
+         /*
+            $.post(url,  $form.serialize() ,
+               function(data, status){
+                     if(data.trim()!="error"){
+                        window.location.replace(`${URL_ROOT}=${data}`)
+                     }else{
+                        $error_message.show();
+                     }
+               // 
+              });
+          */     
+    })
+
+
+
+})
+
+</script>
